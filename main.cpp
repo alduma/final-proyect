@@ -2,36 +2,23 @@
 
 int main()
 {
-    // Create the main window
-    sf::RenderWindow app(sf::VideoMode(Fullscreen), "SFML window");
+  sf::RenderWindow ventana(sf::VideoMode(800, 600), " Pac-man");
+    sf::CircleShape shape(10.f);
+    shape.setFillColor(sf::Color::White);
 
-    // Load a sprite to display
-    sf::Texture texture;
-    if (!texture.loadFromFile("cb.bmp"))
-        return EXIT_FAILURE;
-    sf::Sprite sprite(texture);
-
-	// Start the game loop
-    while (app.isOpen())
+    while (ventana.isOpen())
     {
-        // Process events
         sf::Event event;
-        while (app.pollEvent(event))
+        while (ventana.pollEvent(event))
         {
-            // Close window : exit
             if (event.type == sf::Event::Closed)
-                app.close();
+                ventana.close();
         }
 
-        // Clear screen
-        app.clear();
-
-        // Draw the sprite
-        app.draw(sprite);
-
-        // Update the window
-        app.display();
+        ventana.clear();
+        ventana.draw(shape);
+        ventana.display();
     }
 
-    return EXIT_SUCCESS;
+    return 0;
 }
