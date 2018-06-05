@@ -1,24 +1,27 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
+#include "juego.h"
 
-int main()
-{
-  sf::RenderWindow ventana(sf::VideoMode(800, 600), " Pac-man");
-    sf::CircleShape shape(10.f);
-    shape.setFillColor(sf::Color::White);
+using namespace std;
+using namespace sf;
 
-    while (ventana.isOpen())
-    {
-        sf::Event event;
-        while (ventana.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                ventana.close();
-        }
 
-        ventana.clear();
-        ventana.draw(shape);
-        ventana.display();
-    }
+
+int main(){
+
+
+    juego *partida1;
+    partida1 = new juego (1600, 900, "Pacman :v");
+
+
+
+
+
+
+
+
+
+
 
     return 0;
 }
